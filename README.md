@@ -29,24 +29,24 @@ check platform index.html
 $ cat platforms/android/app/src/main/assets/www/index.html 
 ```
 
-The index.html is a template default. 
-This is different from `www/index.html`.
+The latter platform's `index.html` is still template default. 
+The latter platform's `index.html` is different from the former project's `www/index.html`.
 
-The `cordova prepare` does not update `platforms/android/app/src/main/assets/www/index.html`.
+So the `cordova prepare` does not update `platforms/android/app/src/main/assets/www/index.html` anymore.
 
 ## Reason
 
 The `www/index.html` of this project is `2481' bytes.
 ```
-knaito-MacBook-Pro:sampleUnupdate knaito$ ls -al www/index.html 
+$ ls -al www/index.html 
 -rw-r--r--  1 knaito  staff  2481  1 17 18:02 www/index.html
 ```
 
-This is accidentally same as `cordova-android/bin/templates/project/assets/www/index.html` file size.
+This file size is accidentally same as `cordova-android/bin/templates/project/assets/www/index.html` file size.
 
 Therefore
 
-The following `if` condition in `FileUpdater.js` can not detect the modification.
+The following `if` condition in `FileUpdater.js` can not detect the modification of project `index.html`.
 
 ```
                 if (sourceStats.mtime.getTime() >= targetStats.mtime.getTime() ||
