@@ -55,6 +55,9 @@ Therefore
 
 The following `if` condition in `FileUpdater.js` can not detect the modification of project `index.html`.
 
+- The timestamp of project index.html is older than platform index.html.
+- The filesize of project index.html is same as platform index.html
+
 ```
                 if (sourceStats.mtime.getTime() >= targetStats.mtime.getTime() ||
                         sourceStats.size !== targetStats.size) {
@@ -65,6 +68,10 @@ The following `if` condition in `FileUpdater.js` can not detect the modification
 ```
 
 https://github.com/apache/cordova-common/blob/470718c5055d95041fc935daa862967156ae1e23/src/FileUpdater.js#L100
+
+
+If you edit project index.html (update timestamp), the `cordova prepare` works well.
+
 
 
 
