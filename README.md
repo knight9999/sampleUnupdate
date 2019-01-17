@@ -6,6 +6,15 @@ This is a sample application of cordova project in which `cordova prepare` can n
 
 ## How to reproduce
 
+git clone
+```
+$ git clone https://github.com/knight9999/sampleUnupdate.git
+```
+
+cd
+```
+$ cd sampleUnupdate
+```
 
 install
 ```
