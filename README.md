@@ -1,5 +1,11 @@
 # Sample application for cordova issue
 
+## What is this?
+
+This is a sample application of cordova project.
+
+This project does not work because the `cordova prepare` can not work correctly. 
+
 ## How to reproduce
 
 
@@ -23,13 +29,10 @@ check platform index.html
 $ cat platforms/android/app/src/main/assets/www/index.html 
 ```
 
-The index.html is template default. 
+The index.html is a template default. 
 This is different from `www/index.html`.
 
-```
-$ npx cordova prepare
-```
-does not update `platforms/android/app/src/main/assets/www/index.html`.
+The `cordova prepare` does not update `platforms/android/app/src/main/assets/www/index.html`.
 
 ## Reason
 
