@@ -2,9 +2,7 @@
 
 ## What is this?
 
-This is a sample application of cordova project.
-
-This project does not work because the `cordova prepare` can not work correctly. 
+This is a sample application of cordova project in which `cordova prepare` can not work. The project's index.html is not copied to android platform's index.html.
 
 ## How to reproduce
 
@@ -29,8 +27,8 @@ check platform index.html
 $ cat platforms/android/app/src/main/assets/www/index.html 
 ```
 
-The latter platform's `index.html` is still template default. 
 The latter platform's `index.html` is different from the former project's `www/index.html`.
+The latter platform's `index.html` is still template default. 
 
 So the `cordova prepare` does not update `platforms/android/app/src/main/assets/www/index.html` anymore.
 
